@@ -33,12 +33,11 @@
           <button type="button" class="btn btn-primary">Sign-up</button>
         </div>
       </header>
-      </div>
-      <div class="container"><%if @error && @error.length > 0 then %><div class="alert alert-danger"><%=@error%></div> <% end %>
+    </div>
+    <div class="container"><%if @error && @error.length > 0 then %><div class="alert alert-danger"><%=@error%></div> <% end %>
 <!-- _____YIELD__BEGIN_____ --> 
 <%= yield %>
 <!-- _____YIELD__END_______ -->
-      </div>  
-    </div>    
+    </div>      
   </body>
 </html>
