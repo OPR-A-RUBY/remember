@@ -11,7 +11,6 @@ configure do
     `pass_main`  TEXT,
     `pass_guest` TEXT
   ) "
-
   seed_db_Users db, [
   	['Aleksandr', 'Opr', 'pass+','pass'], 
   	['Ekaterina', 'Kate', '0636', '']
@@ -22,13 +21,18 @@ configure do
   `Persons` 
   (
     `id`       INTEGER PRIMARY KEY AUTOINCREMENT,
-    `id_user`	  TEXT,
     `name`        TEXT,
+    `id_user`	  TEXT,
     `b_date`	  TEXT,
     `d_date`      TEXT,
     `photo_link`  TEXT,
     `discription` TEXT
   ) "
+  seed_db_Persons db, [
+  	['Галина Николаевна Никипелова',      '1', '02.09.1939', '11.12.2021', '', 'Моя тётя, сестра моей мамы'], 
+  	['Александр Викторович Барабанщиков', '1', 'нет данных', '__.06.20__', '', 'Мы вместе раюлтали в БЭС. Мой учитель']
+  ]
+
 
   # _____________________________________________________ Photos ___________________________
   db.execute "CREATE TABLE IF NOT EXISTS 

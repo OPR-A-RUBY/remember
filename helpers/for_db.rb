@@ -31,4 +31,36 @@ def seed_db_Users db, users
       )", user 
     end
   end
-end         
+end       
+
+# Проверить "Есть ли такой person в базе"
+def is_person_exist? db, name 
+  # debug_pause ({'name' => name})                                          # -=DEBUG=- #
+  db.execute("SELECT * FROM Persons WHERE name=?", [name]).length > 0 
+end
+       
+# Внести в базу user 
+def seed_db_Persons db, persons 
+  persons.each do |person|
+    if !is_person_exist? db, person[0]
+      db.execute "INSERT INTO 
+      Persons 
+      (
+        'name',
+        'id_user',
+        'b_date',
+    	  'd_date',
+    	  'photo_link',
+    	  'discription'
+      ) 
+      VALUES (
+        ?, 
+        ?,
+        ?, 
+        ?, 
+        ?, 
+        ?
+      )", person 
+    end
+  end
+end    
