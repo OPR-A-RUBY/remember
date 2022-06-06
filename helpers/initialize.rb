@@ -1,7 +1,7 @@
 #
 configure do
   db = get_db
-  
+  # _____________________________________________________ Users ____________________________
   db.execute "CREATE TABLE IF NOT EXISTS 
   `Users` 
   (
@@ -12,6 +12,12 @@ configure do
     `pass_guest` TEXT
   ) "
 
+  seed_db_Users db, [
+  	['Aleksandr', 'Opr', 'pass+','pass'], 
+  	['Ekaterina', 'Kate', '0636', '']
+  ]
+
+  # _____________________________________________________ Person ___________________________
   db.execute "CREATE TABLE IF NOT EXISTS 
   `Persons` 
   (
@@ -24,6 +30,7 @@ configure do
     `discription` TEXT
   ) "
 
+  # _____________________________________________________ Photos ___________________________
   db.execute "CREATE TABLE IF NOT EXISTS 
   `Photos` 
   (
@@ -35,5 +42,5 @@ configure do
     `person_age`   TEXT,
     `discription`  TEXT
   ) "
-  
+
 end
