@@ -2,6 +2,11 @@
 <b style="color: rgb(256, 64, 128)" > I am: <%= @user %> </b>
 </br></br>
 <h4>My Persons:</h4>
+<% @persons.each do |item| %>
+	<% item.each do |key, value| %> 
+		<%= "#{key}: #{value}" %> </br>
+	<% end %></br>
+<% end %>
 <div>
 	<ul>
 		<li><a href="/person/new"    >New Person</a></li>

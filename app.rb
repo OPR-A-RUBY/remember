@@ -14,6 +14,7 @@ get '/' do
 
 	db = get_db
 	@user = db.execute "SELECT * FROM Users WHERE login=? ", [debug_user]
+	@persons = db.execute "SELECT * FROM Persons WHERE id_user=? ", [@user[0]['id']]
 
 	erb :index
 end
