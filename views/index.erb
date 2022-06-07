@@ -1,12 +1,7 @@
 <h3>Index</h3> <!-- ( index.erb ) -->
-</br>
-</hr>
-<h4>I am:</h4> 
-<% @user[0].each do |key, value| %>
-		<%= "#{key}: #{value}" %>	</br>	
-<% end %>
-</br>
-<h4>Persons</h4>
+<b style="color: rgb(256, 64, 128)" > I am: <%= @user %> </b>
+</br></br>
+<h4>My Persons:</h4>
 <div>
 	<ul>
 		<li><a href="/person/new"    >New Person</a></li>
@@ -14,4 +9,4 @@
 		<li><a href="/person/delete" >Delete Person</a></li>
 	</ul>	
 </div>
-<%= @user %>
+
