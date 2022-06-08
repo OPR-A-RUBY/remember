@@ -4,19 +4,20 @@ get '/persons' do
 end	
 
 get '/person/new' do
-	db = get_db
-	@user = db.execute "SELECT * FROM Users WHERE login=? ", [$debug_user]
   erb :person_new
 end
 
 post '/person/new' do
 	@par = params
+	if params['name'].size == 0
+		@error = '"Фамиоия Имя Отчество" - не должно быть пустым.' 
+		return erb :person_new
+	end	
 	db = get_db
-	@user = db.execute "SELECT * FROM Users WHERE login=? ", [$debug_user]
 	persons = [
 		[
 		 		params['name'], 
-		    @user[0]['id'],
+		    $user[0]['id'],
 		    params['b_date'],
     	  params['d_date'],
     	  params['photo_link'],
@@ -24,7 +25,7 @@ post '/person/new' do
     ]	  
   ]
 	seed_db_Persons db, persons
-	@persons = db.execute "SELECT * FROM Persons WHERE id_user=? ", [@user[0]['id']]
+	@persons = db.execute "SELECT * FROM Persons WHERE id_user=? ", [$user[0]['id']]
   erb :persons
 end
 
