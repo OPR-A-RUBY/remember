@@ -1,28 +1,27 @@
-<h3>Index</h3> <!-- ( index.erb ) -->
-<b style="color: rgb(256, 64, 128)" > I am: <%= $user %> </b>
-</br></br>
-<h4>My Persons:</h4>
-<table class="table table-bordered table-hover" > 
-		<thead>                       
-					<tr class="table-primary">                           												
-							<th class="p-2" align="center">ID</th>
-							<th class="p-2" align="center">Имя</th>
-							<th class="p-2" align="center">Рождение</th>
-							<th class="p-2" align="center">Смерть</th>
-							<th class="p-2" align="center">Примечание</th> 
-							<th class="p-2" align="center">Действия</th>       
-					</tr>
-		</thead>                          
-		
-		<tbody> <% @persons.each do |item| %> 
-					<tr>													
-							<td class="p-2" align="center"> <%= item['id']          %> </td>
-							<td class="p-2" align="left">   <%= item['name']        %> </td>
-							<td class="p-2" align="center"> <%= item['b_date']      %> </td>
-							<td class="p-2" align="center"> <%= item['d_date']      %> </td>
-							<td class="p-2" align="left">   <%= item['discription'] %> </td>
-							<td class="p-2" align="center"> button-(<%= item['id']  %>)</td>
-					</tr>
-		</tbody><% end %>
-</table>
-<div>	<a href="/person/new">New Person</a> </div>
+    <h3>Index</h3> <!-- ( index.erb ) -->
+    <b style="color: rgb(256, 64, 128)" > I am: <%= $user %> </b>
+    </br></br>
+    <h4>My Persons:</h4>
+    <table class="table table-bordered table-hover " > 
+      <thead class="table-primary">                       
+        <tr>                                                  
+          <th class="p-2 text-center table-primary" >ID</th>
+          <th class="p-2 text-center" >Имя</th>
+          <th class="p-2 text-center" >Рождение</th>
+          <th class="p-2 text-center" >Смерть</th>
+          <th class="p-2 text-center" >Примечание</th> 
+          <th class="p-2 text-center" >Действия</th>       
+        </tr>
+      </thead>                            
+      <tbody> <% @persons.each do |item| %> 
+        <tr>                          
+          <td class="p-2" align="center"> <%= item['id']          %> </td>
+          <td class="p-2" align="left">   <%= item['name']        %> </td>
+          <td class="p-2 table-success" align="center"> <%= item['b_date']      %> </td>
+          <td class="p-2 table-danger" align="center"> <%= item['d_date']      %> </td>
+          <td class="p-2" align="left">   <%= item['discription'] %> </td>
+          <td class="p-2 table-info" align="center"> button-(<%= item['id']  %>)</td>
+        </tr>
+      </tbody><% end %>
+    </table>
+    <div> <a href="/person/new">New Person</a> </div>
