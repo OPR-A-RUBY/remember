@@ -1,0 +1,9 @@
+<h4>My Persons:</h4>
+<% @persons.each do |item| %>
+	<% item.each do |key, value| %> 
+		<%= "#{key}: #{value}" %> </br>
+	<% end %></br>
+<% end %>
+<div>
+
+<%= @par %>

@@ -10,10 +10,8 @@ require_relative './helpers/persons.rb'
 require_relative './helpers/users.rb' 
 
 get '/' do
-	debug_user = 'Opr' # Отладочный пользователь
-
 	db = get_db
-	@user = db.execute "SELECT * FROM Users WHERE login=? ", [debug_user]
+	@user = db.execute "SELECT * FROM Users WHERE login=? ", [$debug_user]
 	@persons = db.execute "SELECT * FROM Persons WHERE id_user=? ", [@user[0]['id']]
 
 	erb :index
@@ -22,3 +20,5 @@ end
 get '/about' do
 	erb :about
 end	
+
+$debug_user = 'Opr' # Отладочный пользователь
