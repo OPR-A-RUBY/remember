@@ -2,25 +2,25 @@
     <b style="color: rgb(256, 64, 128)" > I am: <%= $user %> </b>
     </br></br>
     <h4>My Persons:</h4>
-    <table class="table table-bordered table-hover " > 
+    <table class="table table-bordered" > 
       <thead class="table-primary">                       
         <tr>                                                  
           <th class="p-2 text-center table-primary" >ID</th>
+          <th class="p-2 text-center" >Фото</th>
           <th class="p-2 text-center" >Имя</th>
           <th class="p-2 text-center" >Рождение</th>
           <th class="p-2 text-center" >Смерть</th>
-          <th class="p-2 text-center" >Примечание</th> 
-          <th class="p-2 text-center" >Действия</th>       
+          <th class="p-2 text-center" >Примечание</th>        
         </tr>
       </thead>                            
       <tbody> <% @persons.each do |item| %> 
         <tr>                          
-          <td class="p-2" align="center"> <%= item['id']          %> </td>
-          <td class="p-2" align="left">   <%= item['name']        %> </td>
-          <td class="p-2 table-success" align="center"> <%= item['b_date']      %> </td>
-          <td class="p-2 table-danger" align="center"> <%= item['d_date']      %> </td>
-          <td class="p-2" align="left">   <%= item['discription'] %> </td>
-          <td class="p-2 table-info" align="center"> button-(<%= item['id']  %>)</td>
+          <td class="p-2" align="center"> <%= item['id']%> </td>
+          <td class="p-2" align="center"> <p>Photo</p> </td>
+          <td class="p-2" align="left"><a href="/person/<%=item['id']%>"><%= item['name']%></a></td>
+          <td class="p-2" align="center"> <%= item['b_date']%> </td>
+          <td class="p-2" align="center"> <%= item['d_date']%> </td>
+          <td class="p-2" align="left">   <%= item['discription']%> </td>
         </tr>
       </tbody><% end %>
     </table>
