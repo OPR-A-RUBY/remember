@@ -3,23 +3,23 @@
 <form action="/person/new", method="POST" class="row g-3">
   <div class="col-md-6">
     <label for="inputName" class="form-label"> Фамилия Имя Отчество: </label>
-    <input type="text" class="form-control" name="name" placeholder="Петров Николай Иванович">
+    <input type="text" class="form-control" name="name" value="<%=@person[0]['name']%>" placeholder="Петров Николай Иванович">
   </div>
   <div class="col-md-3">
     <label for="inputBDate" class="form-label"> Дата рождения: </label>
-    <input type="text" class="form-control" name="b_date" placeholder="13.02.1936">
+    <input type="text" class="form-control" name="b_date" value="<%=@person[0]['b_date']%>" placeholder="13.02.1936">
   </div>
   <div class="col-md-3">
     <label for="inputDDate" class="form-label"> Дата смерти: </label>
-    <input type="text" class="form-control" name="d_date" placeholder="15.11.2003">
+    <input type="text" class="form-control" name="d_date" value="<%=@person[0]['d_date']%>" placeholder="15.11.2003">
   </div>
   <div class="input-group mb-12"></br>
-	  <input type="file" class="form-control" name="photo_link">
+	  <input type="file" class="form-control" name="photo_link" value="<%=@person[0]['photo_link']%>" >
 	  <label class="input-group-text" for="inputGroupFile"> Загрузить фото </label>
 	</div>
   <div class="col-md-12">
     <label for="inputDiscription" class="form-label"> Кем Вам приходится этот человек: </label>
-    <textarea class="form-control" name="discription" rows="3" placeholder="Это моя .... Я с этим человеком .... Для меня он ..."></textarea>
+    <textarea class="form-control" name="discription" rows="3" value="<%=@person[0]['discription']%>" placeholder="Это моя .... Я с этим человеком .... Для меня он ..."></textarea>
   </div>
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Запомнить данные</button>
