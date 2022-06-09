@@ -38,10 +38,18 @@ def is_person_exist? db, name
   # debug_pause ({'name' => name})                                          # -=DEBUG=- #
   db.execute("SELECT * FROM Persons WHERE name=?", [name]).length > 0 
 end
-       
+
+# Сделаем первое слово ФАМИЛИЮ - большими буквами
+def to_big_word fool_name_in
+  words = fool_name_in.split(' ')
+  words[0] = words[0].upcase
+  fool_name_out = words.join(' ')
+end
+
 # Внести в базу user 
 def seed_db_Persons db, persons 
   persons.each do |person|
+    person[0] = to_big_word(person[0])
     if !is_person_exist? db, person[0]
       db.execute "INSERT INTO 
       Persons 
@@ -63,4 +71,6 @@ def seed_db_Persons db, persons
       )", person 
     end
   end
-end    
+end 
+
+
