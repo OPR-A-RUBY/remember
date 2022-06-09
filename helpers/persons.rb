@@ -32,7 +32,9 @@ post '/person/new' do
 end
 
 
-get '/person/edit' do
+get '/person/:id_person' do
+  db = get_db
+  @person = db.execute "SELECT * FROM Persons WHERE id=? ", [params[:id_person]]
   erb :person_edit
 end
 
