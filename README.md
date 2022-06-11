@@ -1,6 +1,7 @@
 # remember #
 ### "... to don't forget them ..." ### 
 This should help in not forgetting your ancestors. It can participate in the annual memorial process.
+Существует другая разработка этого приложения: git@github.com:OPR-A-RUBY/Remember-HQ.git
 
 ## Поминальное приложение - сайт ##
 Задумано для сохранения информации о предках для потомков.
